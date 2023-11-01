@@ -11,7 +11,7 @@ app.post("/send-sms", async(req, res) => {
 
     await sendSms(phoneNumber, message);
 
-    res.send("Message is sent")
+    res.send({"success":true, "message":"Message is sent"})
 })
 
 app.post("/send-whatsapp", async(req, res) => {
@@ -19,7 +19,7 @@ app.post("/send-whatsapp", async(req, res) => {
 
     await sendWhatsapp(message);
 
-    res.send("Message is sent")
+    res.send({"success":true, "message":"Message is sent"})
 })
 
 app.listen(port, () => {
